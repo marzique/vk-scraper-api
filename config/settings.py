@@ -2,6 +2,8 @@ from pathlib import Path
 import sys
 import os 
 
+from config.rest_settings import *
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
@@ -30,6 +32,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # libs
+    'rest_framework',
+    'rest_framework.authtoken',
     'django_extensions',
 
     # project's

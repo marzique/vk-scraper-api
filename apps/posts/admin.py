@@ -1,4 +1,5 @@
 from django.contrib import admin
+from rest_framework.authtoken.admin import TokenAdmin
 
 from posts.models import Post
 
@@ -11,3 +12,6 @@ class Post(admin.ModelAdmin):
 
     def snippet(self, obj):
         return obj.content[:10] 
+
+
+TokenAdmin.raw_id_fields = ['user']
