@@ -1,0 +1,1 @@
+## Django project to transfer posts from VK to Telegram
