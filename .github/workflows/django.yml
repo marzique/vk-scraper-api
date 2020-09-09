@@ -27,5 +27,4 @@ jobs:
         pipenv install --ignore-pipfile --dev
     - name: Run Tests
       run: |
-        pipenv shell
         pipenv run test
