@@ -25,7 +25,7 @@ jobs:
       run: |
         pip3 install pipenv
         pipenv install --ignore-pipfile --dev
-        pipenv shell
     - name: Run Tests
       run: |
-        python manage.py test
+        pipenv shell
+        pipenv run test
