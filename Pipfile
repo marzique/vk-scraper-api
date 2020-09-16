@@ -9,6 +9,8 @@ verify_ssl = true
 django = "*"
 django-extensions = "*"
 djangorestframework = "*"
+python-telegram-bot = "*"
+django-environ = "*"
 
 [requires]
 python_version = "3.6"

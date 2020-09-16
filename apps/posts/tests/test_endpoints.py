@@ -6,7 +6,7 @@ from rest_framework.test import APITestCase, APIClient
 from rest_framework import status
 
 
-
+ 
 class PostsAPIViewTest(APITestCase):
 
     def __init__(self, method_name):
@@ -31,5 +31,3 @@ class PostsAPIViewTest(APITestCase):
 
         resp = self.client.get(self.posts_url)
         self.assertEqual(resp.status_code, status.HTTP_401_UNAUTHORIZED)
-
-

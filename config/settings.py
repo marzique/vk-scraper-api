@@ -1,8 +1,15 @@
+import environ
+
 from pathlib import Path
 import sys
-import os 
+import os
 
 from config.rest_settings import *
+
+
+# reading .env file
+environ.Env.read_env()
+env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,11 +17,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kk)xum#g1x$of#e=s8msx3q%2tyg7b+ekthd249aoq#7_7d-w&'
+SECRET_KEY = env('SECRET_KEY')
+TELEGRAM_TOKEN = env('TELEGRAM_TOKEN')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -23,7 +28,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django_extensions',
 
-    # project's
+    # apps
     'scraper',
     'poster',
     'posts',
