@@ -14,6 +14,10 @@ class TelegramClient:
         self.bot = telegram.Bot(token=TELEGRAM_TOKEN)
 
     def send_message(self, text='', parse_mode='HTML'):
+        """TODO:
+        https://python-telegram-bot.readthedocs.io/en/stable/telegram.bot.html#telegram.Bot.send_message
+        """
+
         try:
             return self.bot.send_message(
                 chat_id=self.CHAT_ID, 
