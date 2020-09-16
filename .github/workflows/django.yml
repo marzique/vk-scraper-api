@@ -1,5 +1,9 @@
 name: Django CI
 
+env:
+  SECRET_KEY: test
+  TELEGRAM_TOKEN: fake_token
+
 on:
   push:
     branches: [ master, dev ]
